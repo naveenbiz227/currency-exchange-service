@@ -122,14 +122,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<image>
-						<name>naveenbiz227/mmv3-${project.artifactId}:${project.version}</name>
-					</image>
-					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
-				</configuration>				
+<!--				<configuration>-->
+<!--					<image>-->
+<!--						<name>naveenbiz227/mmv3-${project.artifactId}:${project.version}</name>-->
+<!--					</image>-->
+<!--					<pullPolicy>IF_NOT_PRESENT</pullPolicy>-->
+<!--				</configuration>				-->
 			</plugin>
 		</plugins>
+        <finalName>devops-integration</finalName>
 	</build>
 
 	<repositories>
