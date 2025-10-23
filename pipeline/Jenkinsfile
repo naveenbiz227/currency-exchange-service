@@ -20,9 +20,9 @@ pipeline{
 
          stage('Build Docker Image') {
             steps {
-                      sh '''
-                         pipeline/jenkins/build/build.sh
-                         '''
+                      script{
+                      sh 'docker build -t naveenbiz227/devops-integration .'
+                      }
             }
         }
     }
