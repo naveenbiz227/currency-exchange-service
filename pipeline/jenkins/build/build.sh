@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Copy the new jar to the build location
-cp -f /target/devops-integrfation.jar pipeline/jenkins/build/
+#cp -f /target/devops-integrfation.jar pipeline/jenkins/build/
 
 echo "****************************"
 echo "** Building Docker Image ***"
