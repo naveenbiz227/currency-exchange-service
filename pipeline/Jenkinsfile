@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    tools {
+        maven 'Maven 3.9.11' // Replace 'Maven 3.9.6' with the name you gave your Maven installation
+    }
+
+    stages{
+        stage('Checkout') {
+            steps {
+            checkout scmGit(branches: [[name: '*/dev-master']], extensions: [], userRemoteConfigs: [[credentialsId: 'd1462202-56f4-4824-b942-ba88dc35836d', url: 'https://github.com/naveenbiz227/currency-exchange-service']])
+            }
+        }
+
+          stage('Build') {
+            steps {
+                // Build the Spring Boot application using Maven
+                sh 'mvn clean install'
+            }
+        }
+
+         stage('Build Docker Image') {
+            steps {
+                    sh '.jenkins/build.build.sh'
+            }
+        }
+    }
+}
